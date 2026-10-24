@@ -22,6 +22,12 @@ body {
   cursor: pointer;
 }
 
+#random-btn {
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
 #box {
   margin-top: 1em;
   width: 150px;
