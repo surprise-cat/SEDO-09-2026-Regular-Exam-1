@@ -19,3 +19,12 @@ document.getElementById('random-btn').addEventListener('click', function() {
   var color = randomHex();
   setBoxColor(color);
 });
+
+function setBoxColor(color) {
+  document.getElementById('box').style.backgroundColor = color;
+}
+
+document.getElementById('apply-btn').addEventListener('click', function() {
+  var color = document.getElementById('color-input').value;
+  document.getElementById('box').style.backgroundColor = color;
+});
