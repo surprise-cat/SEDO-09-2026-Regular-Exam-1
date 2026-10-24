@@ -1,21 +1,14 @@
-// Helper to set box color
-function setBoxColor(color) {
-  document.getElementById('box').style.backgroundColor = color;
-}
+const $ = sel => document.querySelector(sel);
+const box = $('#box');
+const input = $('#color-input');
+const applyBtn = $('#apply-btn');
+const randomBtn = $('#random-btn');
 
-// Apply text input color
-document.getElementById('apply-btn').addEventListener('click', function() {
-  var color = document.getElementById('color-input').value;
-  setBoxColor(color);
-});
+const setColor = c => box.style.backgroundColor = c;
 
-// Generate a random hex color
-function randomHex() {
-  return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
-}
+applyBtn.addEventListener('click', () => setColor(input.value));
 
-// Apply random color on button click
-document.getElementById('random-btn').addEventListener('click', function() {
-  var color = randomHex();
-  setBoxColor(color);
+randomBtn.addEventListener('click', () => {
+  const color = `#${Math.floor(Math.random() * 0xffffff).toString(16).padStart(6,'0')}`;
+  setColor(color);
 });
